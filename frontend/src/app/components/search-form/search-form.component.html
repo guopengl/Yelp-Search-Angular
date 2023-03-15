@@ -1,0 +1,66 @@
+<div class="container-fluid col-11 col-md-6 mx-auto p-3 p-md-5 mb-5" id="inputForm">
+   <form ngNativeValidate class="row g-3">
+      <div class="col-auto mx-auto">
+         <h5>Business search</h5>
+      </div>
+
+      <div class="col-12">
+         <label class="form-label">Keyword</label>
+         <input type="text" name="keyword" required class="form-control"
+         matInput [matAutocomplete]="auto" 
+         [(ngModel)]="inputKeyword" (input)="keywordAutocomplete()">
+         <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngIf="isLoading">
+               <mat-spinner diameter="25"></mat-spinner>
+            </mat-option>
+      
+            <ng-container *ngIf="!isLoading">
+               <mat-option *ngFor="let keyword of keywords" [value]="keyword">
+               {{keyword}}
+               </mat-option>
+            </ng-container>
+         </mat-autocomplete>
+      </div>
+   
+      
+      <div class="col-md-6">
+         <label class="form-label" id="distanceLabel">Distance</label>
+         <input [(ngModel)]="inputDistance" type="text" placeholder="10" name="distance" class="form-control">
+      </div>
+
+      <div class="col-8 col-md-5">
+         <label class="form-label">Category</label>
+         <select name="category" [(ngModel)]="inputCategory" class="form-select">
+            <option value="All">Default</option>
+            <option value="arts">Arts &amp; Entertainment</option>
+            <option value="health">Health &amp; Medical</option>
+            <option value="hotelstravel">Hotels &amp; Travel</option>
+            <option value="food">Food</option>
+            <option value="professional">Professional Services</option>
+         </select>
+      </div>
+      
+      <div class="col-12">
+         <label class="form-label">Location</label>
+         <input class="form-control" [(ngModel)]="inputLocation" type="text" name="location" required [disabled]="locationDisabled">
+      </div>
+      
+   
+      <div class="col-12">
+         <div class="form-check">
+            <input [checked]="checkboxFlag" class="form-check-input"
+            (click)="checkboxClicked()" type="checkbox">
+            <label class="form-check-label">
+               Auto-detect my location
+            </label> 
+         </div>
+      </div>
+      
+      <div class="col-auto mx-auto">
+         <input class="btn btn-danger" type="submit" value="Submit" (click)="submit()">
+         <input class="btn btn-primary" type="button" value="Clear" (click)="clear()"> 
+      </div>
+   </form>
+</div>
+
+

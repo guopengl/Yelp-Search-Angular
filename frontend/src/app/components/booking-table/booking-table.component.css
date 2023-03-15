@@ -1,0 +1,28 @@
+th,td{
+   text-align: center;
+   height: fit-content;
+}
+
+.table-responsive{
+   background: white;
+   border: 1px rgb(187, 186, 186) solid;
+   border-radius: 10px;
+}
+
+.table thead > tr > th { border-bottom: 1px rgb(222, 226, 230) solid; }
+
+tbody button{
+   border:none;
+   background: inherit;
+}
+
+.col-12.col-md-4.mx-auto{
+   text-align: center;
+   color:red;
+   border: 1px rgb(187, 186, 186) solid;
+   border-radius: 10px;
+}
+
+h4{
+   margin: 0;
+}

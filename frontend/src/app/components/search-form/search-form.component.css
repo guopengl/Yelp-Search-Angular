@@ -1,0 +1,27 @@
+#inputForm{
+    background: white;
+    border: 1px rgb(187, 186, 186) solid;
+    border-radius: 10px;
+}
+
+h5{
+   font-weight: bold;
+}
+
+label::after{
+   content: ' *';
+   color: red;
+   font-size: 15px;
+}
+
+#distanceLabel::after{
+   content:'';
+}
+
+.form-check-label::after{
+   content:'';
+}
+
+.btn-danger{
+   margin-right: 25px;
+}

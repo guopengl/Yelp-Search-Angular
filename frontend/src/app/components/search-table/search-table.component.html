@@ -1,0 +1,33 @@
+<div class="container-fluid col-11 col-md-9 mx-auto p-0" id="searchTable"
+*ngIf="businessData.length!== 0 && businessData[0] !=='Entered distance is not a number' && businessData[0] !=='Entered location does not exists'" >
+   <table class="table table-striped table-borderless mb-0">
+      <thead>
+         <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th data-direction="asc" data-sort="name" (click)="sort($event)">Business Name</th>
+            <th data-direction="asc" data-sort="rating" (click)="sort($event)">Rating</th>
+            <th data-direction="asc" data-sort="distance" (click)="sort($event)">Distance (miles)</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let business of businessData;let i = index" (click)="getDetailsAndReviews(business.id)">
+            <th scope="row">{{i+1}}</th>
+            <td><img [src]="business.image_url"></td>
+            <td>{{business.name}}</td> 
+            <td>{{business.rating}}</td>
+            <td>{{(business.distance/1609.344).toFixed(2)}}</td>
+         </tr>
+      </tbody>
+   </table> 
+</div>
+
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-12 col-md-4 mx-auto">
+         <h5 *ngIf="businessData[0] ==='Entered distance is not a number'">Entered distance is not a number</h5>
+         <h5 *ngIf="businessData[0] ==='Entered location does not exists'">Entered location does not exists</h5>
+         <h5 *ngIf="businessData.length === 0">No results available</h5>
+      </div>
+   </div>
+</div>

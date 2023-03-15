@@ -1,0 +1,41 @@
+#searchTable{
+   background: white;
+   border: 1px rgb(187, 186, 186) solid;
+   border-radius: 10px;
+}
+
+th,td{
+   text-align: center;
+}
+
+tbody>tr:hover{
+   cursor: pointer;
+}
+
+th:nth-of-type(3),th:nth-of-type(4),th:nth-of-type(5):hover{
+   cursor: pointer;
+}
+
+img{
+   width: 100px;
+   height: 100px;
+}
+
+@media (max-width: 768px){
+   img{
+      width: 50px;
+      height: 50px;
+   }
+}
+
+.col-12.col-md-4{
+   background: white;
+   border: 1px rgb(187, 186, 186) solid;
+   border-radius: 10px;
+   color:red;
+   text-align: center;
+}
+
+.col-12.col-md-4 h5{
+   margin: 0;
+}

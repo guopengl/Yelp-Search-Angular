@@ -1,0 +1,12 @@
+<div class="container mb-5">
+  <nav class="navbar navbar-expand navbar-light justify-content-end"> 
+       <ul class="navbar-nav mr-auto">
+         <li [ngClass]="classForSearch" class="nav-item">
+           <a class="nav-link" routerLink="/search" (click)="searchClicked()">Search</a>
+         </li>
+         <li [ngClass]="classForBookings" class="nav-item">
+           <a class="nav-link" routerLink="/bookings" (click)="bookingsClicked()">My Bookings</a>
+         </li>
+       </ul>
+   </nav>
+</div>

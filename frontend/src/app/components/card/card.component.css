@@ -1,0 +1,50 @@
+/* ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+   color:red;
+   background-color: green;
+}
+   
+::ng-deep .mat-tab-list .mat-tab-labels {
+   color:black;
+   background-color: yellow;
+}
+    */
+
+mat-tab-header{
+   background-color: rgb(255,215,63);
+} 
+
+#card{
+   background: white;
+   border: 1px rgb(187, 186, 186) solid;
+   border-radius: 10px;
+}
+
+#goBackButton{
+   border: none;
+   background-color: white;
+}
+
+h4{
+   text-align: center;
+}
+
+p[data-status='Open Now']{
+   color: green;
+}
+
+p[data-status='Closed']{
+   color: red;
+}
+
+.carousel-item>img{
+   width: 300px;
+   height: 300px;
+}
+
+@media (max-width: 768px){
+   .carousel-item>img{
+      width: 250px;
+      height: 250px;
+   }
+}
+
